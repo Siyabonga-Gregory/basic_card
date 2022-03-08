@@ -11,13 +11,13 @@
  box-shadow: 1px 5px 60px 0px #4646466b;
 }
 
-.card .picture,.card .name,.card .jobtitle,.card .buttons {
+.mainDiv .picture,.card .name,.card .jobtitle,.card .buttons {
  display: flex;
  justify-content: center;
  align-items: center;
 }
 
-.card .picture {
+.mainDiv .picture {
  border: 2px solid #4646466b;
  height: 100px;
  width: 100px;
@@ -28,7 +28,7 @@
  transition: all .3s;
 }
 
-.card .picture p {
+.mainDiv .picture p {
  font-size: .8em;
  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -48,28 +48,73 @@ button {
  font-size: .7em;
 }
 
-.card .picture:hover,button:hover {
+.mainDiv .picture:hover,button:hover {
  background: #252525;
  color: #f1f5f3;
 }
 
-.card .name p {
+.mainDiv .name p {
  margin-top: 8%;
  margin-bottom: 5%;
  font-size: 1em;
 }
 
-.card .jobtitle p {
+.mainDiv .jobtitle p {
  margin-bottom: 10%;
  font-size: .54em;
  text-transform: uppercase;
  letter-spacing: .5em;
 }
 
+.mainDiv {
+  width: 190px;
+ height: 254px;
+ border-radius: 10px;
+ background: #f1f5f3;
+ box-shadow: 1px 5px 60px 0px #4646466b;
+ --green: #1BFD9C;
+ font-size: 15px;
+ padding: 0.7em 2.7em;
+ letter-spacing: 0.06em;
+ position: relative;
+ font-family: inherit;
+ border-radius: 0.6em;
+ overflow: hidden;
+ transition: all 0.3s;
+ line-height: 1.4em;
+ border: 2px solid var(--green);
+ background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%,transparent 60% , rgba(27, 253, 156, 0.1) 100%);
+ color: var(--green);
+ box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
+}
+
+.mainDiv:hover {
+ color: #82ffc9;
+ box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+}
+
+.mainDiv:before {
+ content: "";
+ position: absolute;
+ left: -4em;
+ height: 100%;
+ top: 0;
+ transition: transform .4s ease-in-out;
+ background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%,rgba(27, 253, 156, 0.1) 60% , transparent 100%);
+}
+
+.mainDiv:hover:before {
+ transform: translateX(15em);
+}
+
+body{
+  background-color: #252525;
+}
+
 </style>
 </head>
 <body>
-      <div class="card">
+<div class="mainDiv">
   <div class="picture">
     <p>IMAGE</p>
   </div>
@@ -81,12 +126,6 @@ button {
   </div>
   <div class="buttons">
     <div class="button1">
-      <button>Button</button>
-    </div>
-    <div class="button2">
-      <button>Button</button>
-    </div>
-    <div class="button3">
       <button>Button</button>
     </div>
   </div>
